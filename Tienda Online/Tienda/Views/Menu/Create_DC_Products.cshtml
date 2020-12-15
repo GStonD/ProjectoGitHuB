@@ -1,0 +1,413 @@
+﻿@model IEnumerable<Tienda.Controllers.Productos.CreateComicCommand>
+
+@{
+    ViewData["Title"] = "Create_DC_Products";
+}
+
+
+<form asp-action="go" method="post" enctype="multipart/form-data">
+
+    <input name="carrito" type="submit" value="Carrito" class="btn btn-default" style="width:200px;height:50px;position:absolute;left:1100px;background-color:#FFFF00" />
+</form>
+
+<form asp-action="Pedido_go" method="post" enctype="multipart/form-data">
+
+    <input name="carrito" type="submit" value="Mis Compras" class="btn btn-default" style="width:200px;height:50px;position:absolute;left:800px;background-color:#FFFF00" />
+
+</form>
+
+
+<div style="color:#0000FF">
+    <h1> DC </h1>
+</div>
+
+
+@if (Model.Count() == 1)
+{
+
+    <div style="width:200px;height:50px;position:absolute;left:1100px;color:#DF1616">
+        HAY UN ARTICULO EN EL CARRITO
+    </div>
+
+
+}
+
+@if (Model.Count() > 1)
+{
+
+    <div style="width:200px;height:50px;position:absolute;left:1100px;color:#DF1616">
+        HAY @Model.Count() ARTICULOS EN EL CARRITO
+    </div>
+
+
+}
+
+<form asp-action="Create_Marvel_Products_logica11" method="post" enctype="multipart/form-data">
+
+    <h2>Liga de la Justicia</h2>
+    <div>
+        <img src="~/fotos/liga de la justicia.jpg" alt="Foto de Contacto" width="300" height="300">
+
+        <div style="position:absolute;left:450px;top:300px" class="form-group">
+            <input name="Liga de la Justicia" type="submit" value="Agregar al Carrito" class="btn btn-default" onclick="Listo()" />
+
+            <input type="hidden" name="Liga de la Justiciawe" value="Liga de la Justicia" /><br />
+        </div>
+
+    </div>
+    <div style="position:absolute;left:450px;top:170px">
+        La Liga de la Justicia es un equipo compuesto por los superhéroes más poderosos del mundo dedicados a la lucha contra el crimen, la injusticia, así como amenazas terrestres, alienígenas, interdimensionales y sobrenaturales.
+        Fue fundado por Batman y la Mujer Maravilla tras el heroico sacrifico de Superman por vencer a Doomsday.
+        La Liga se reunió cundo Steppenwolf y los Parademonios llegaron a la Tierra en busca de las Cajas Madre, llevando a los héroes a resucitar a Superman para que les ayude en su batalla, con éxito.
+        Más adelante, ubicaron su instalación en la Mansión Wayne para seguir operando como protectores del mundo.
+
+
+    </div>
+
+    <div style="position:absolute;left:450px;top:340px">
+        Precio:  120 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:360px">
+        Fecha de Publicacion: Marzo de 1960
+    </div>
+
+    <div style="position:absolute;left:450px;top:380px">
+        Numero de Comic = 2
+    </div>
+
+</form>
+<form asp-action="Create_Marvel_Products_logica13" method="post" enctype="multipart/form-data">
+    <br>
+
+    <h2> Batman </h2>
+    <div>
+
+        <img src="~/fotos/batman.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+
+        <div style="position:absolute;left:450px;top:770px" class="form-group">
+            <input name="Batman" type="submit" value="Agregar al Carrito" class="btn btn-default" width="300" height="300" onclick="Listo()" />
+            <input type="hidden" name="hBatman" value="Batman" /><br />
+
+
+        </div>
+
+
+    </div>
+
+    <div style="position:absolute;left:450px;top:550px">
+        Batman ha sido el protector de Gotham durante décadas, CEO de Wayne Enterprises, Patriarca de la familia Bat y veterano miembro de la Liga de la Justicia.
+        es un superhéroe co-creado por el artista Bob Kane y el escritor Bill Finger y publicado por DC Comics . El personaje hizo su primera aparición en Detective Comics # 27 (mayo, 1939). Batman es la identidad secreta de Bruce Wayne .
+        Ser testigo del asesinato de sus padres cuando era niño lo lleva a entrenarse a sí mismo a la perfección física e intelectual ya ponerse un disfraz de murciélago para luchar contra el crimen.
+        Batman opera en Gotham City , asistido por varios personajes secundarios, incluido su compañero Robin y su mayordomo Alfred Pennyworth , y lucha contra una variedad de villanos influenciados por las raíces de los personajes en las revistas de películas y pulpa.
+        A diferencia de la mayoría de los superhéroes, él no posee superpoderes; hace uso (lo mejor que puede) del intelecto, las habilidades de detective, la ciencia y la tecnología, la riqueza, la destreza física y la intimidación en su guerra contra el crimen.
+
+    </div>
+
+    <div style="position:absolute;left:450px;top:810px">
+        Precio:  115 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:830px">
+        Fecha de Publicacion: marzo de 1939
+    </div>
+
+    <div style="position:absolute;left:450px;top:850px">
+        Numero de Comic = 27
+    </div>
+
+
+</form>
+<br>
+<br>
+<br>
+<form asp-action="Create_Marvel_Products_logica14" method="post" enctype="multipart/form-data">
+    <h2> SuperMan </h2>
+    <div>
+
+        <img src="~/fotos/superman.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+        <div class="form-group" style="position:absolute;left:450px;top:1180px">
+            <input name="Superman" type="submit" value="Agregar al Carrito" class="btn btn-default" onclick="Listo()" />
+            <input type="hidden" name="SuperMan" value="SuperMan" /><br />
+
+
+
+        </div>
+
+        <div style="position:absolute;left:450px;top:970px">
+            Kal-El fue enviado desde Krypton por sus padres antes de que su planeta de origen y la mayoría de sus habitantes fueran destruidos. Jonathan y Martha Kent, de Smallville, Kansas, lo encontraron cuando su nave se estrelló en un campo.
+            Adoptaron al bebé como propio, llamándolo Clark Joseph Kent. El sol amarillo del sistema solar en la galaxia de la Vía Láctea le dio a Clark superpoderes.
+            Creció en Smallville y se mudó a Metrópolis para trabajar en el Daily Planet, donde creció su relación con muchos humanos, especialmente con Lois Lane, su esposa.
+            Siempre ayuda a los que están en peligro como Superman y ha luchado contra muchos enemigos con arco, y su enemigo más común es Lex Luthor .
+        </div>
+        <div style="position:absolute;left:450px;top:1220px">
+            Precio:  122 Pesos
+        </div>
+        <div style="position:absolute;left:450px;top:1240px">
+            Fecha de Publicacion: marzo de 1938
+        </div>
+
+        <div style="position:absolute;left:450px;top:1260px">
+            Numero de Comic = 10
+        </div>
+
+    </div>
+</form>
+<br>
+<form asp-action="Create_Marvel_Products_logica15" method="post" enctype="multipart/form-data">
+
+    <h2> SuperMan:Doomsday </h2>
+    <div>
+
+        <img src="~/fotos/doomsday.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+        <div style="position:absolute;left:450px;top:1580px" class="form-group">
+            <input name="SuperMan:Doomsday" type="submit" value="Agregar al Carrito" class="btn btn-default" onclick="Listo()" />
+            <input type="hidden" name="SuperMan:Doomsdayb" value="SuperMan:Doomsday" /><br />
+
+
+        </div>
+
+
+        <div style="position:absolute;left:450px;top:1150px">
+            Precio:  125 Pesos
+        </div>
+        <div style="position:absolute;left:450px;top:1340px">
+            Doomsday es un monstruo asesino, aparentemente sin sentido, que mata a Superman . Es el resultado dela ingeniería genética kryptoniana que salió mal. En latrama cómica de" The Death of Superman " en la que apareció por primera vez, Doomsday misteriosamente golpeó su camino fuera de una celda metálica subterránea, excavó su camino y comenzó a matar y destruir sin sentido todo lo que vio.
+            Sus motivos fueron inicialmente desconocidos, pero su naturaleza era obvia; Era increíblemente poderoso, despiadado y aparentemente imparable. Él derrotó fácilmente a la liga de la justicia antes de enfrentarse a Superman .
+            Doomsday es el único en la continuidad de los cómics principales que ha matado a Superman ; y lo hizo simplemente al golpear al hombre de acero hasta la muerte.
+            Doomsday también fue asesinado en la batalla, pero luego se curó y volvió a la vida, más fuerte que antes. Superman lo ha encontrado en numerosas ocasiones desde entonces.
+        </div>
+
+
+    </div>
+    <div style="position:absolute;left:450px;top:1620px">
+        Precio:  125 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:1640px">
+        Fecha de Publicacion: Diciembre de 1992
+    </div>
+
+    <div style="position:absolute;left:450px;top:1660px">
+        Numero de Comic = 7
+    </div>
+
+</form>
+
+
+<form asp-action="Create_Marvel_Products_logica16" method="post" enctype="multipart/form-data">
+    <h2> Teen Titans </h2>
+    <div>
+
+        <img src="~/fotos/teen.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+
+        <div class="form-group" style="position:absolute;left:450px;top:1900px">
+            <input name="Teen Titans " type="submit" value="Agregar Carrito" class="btn btn-default" onclick="Listo()" />
+            <input type="hidden" name="vTeen Titans" value="Teen Titans" /><br />
+
+
+        </div>
+
+    </div>
+    <div style="position:absolute;left:450px;top:1700px">
+
+        Los Teen Titans eran un equipo de jóvenes superhéroes que fueron los ex compañeros de héroes más viejos y más experimentados. Se reunieron por primera vez cuando Robin , Aqualad y Kid Flash respondieron a una emergencia que se estaba produciendo en la aldea de la aldea conocida como Hatton Corners .
+        Allí lucharon contra un misterioso villano que se hacía llamar Mister Twister . Después de derrotar a Mister Twister y robarle sus poderes elementales, los tres jóvenes héroes decidieron unirse como los Teen Titans .
+        Esta decisión fue apoyada por sus respectivos mentores, Batman , Aquaman y Flash.
+    </div>
+
+
+    <div style="position:absolute;left:450px;top:1940px">
+        Precio:  125 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:1960px">
+        Fecha de Publicacion: Diciembre de 1998
+    </div>
+
+    <div style="position:absolute;left:450px;top:1980px">
+        Numero de Comic = 7
+    </div>
+
+</form>
+
+<br>
+
+<form asp-action="Create_Marvel_Products_logica17" method="post" enctype="multipart/form-data">
+    <h2> Flash Point </h2>
+    <div>
+
+        <img src="~/fotos/flashpoint.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+
+        <div class="form-group" style="position:absolute;left:450px;top:2300px">
+            <input name="Flash Point" type="submit" value="Agregar Carrito" class="btn btn-default" onclick="Listo()" />
+            <input type="hidden" name="Flash Pointb" value="Flash Point" /><br />
+        </div>
+
+
+    </div>
+
+    <div style="position:absolute;left:450px;top:2080px">
+
+        Barry Allen se despierta para descubrir que se encuentra en una línea de tiempo alterada en la que Citizen Cold es el héroe más grande de Central City , su madre Nora (fallecida en su propia línea de tiempo) está viva, su padre Henry , murió de un ataque al corazón hace tres años ( en lugar de en la cárcel), y que Flash , la Liga de la Justicia y Superman no existen.
+        En Gotham City , Batman tira a un criminal de un edificio antes de ser confrontado por Cyborg .
+        Cyborg y Batman tienen una conferencia con un grupo de superhéroes, para discutir cómo la batalla entre los atlantes de Aquaman y las amazonas de la Mujer Maravilla ha causado una muerte y destrucción masivas en Europa occidental, con la posibilidad de que América se encuentre en peligro de extinción.
+        Los héroes no pueden trabajar juntos para encontrar una solución, y la reunión se disuelve. Barry Allen conduce al Batcave, donde es atacado por Batman, quien se revela que es Thomas Wayne , quien tomó el manto después de la muerte de su hijo .
+    </div>
+
+    <div style="position:absolute;left:450px;top:2340px">
+        Precio:  150 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:2360px">
+        Fecha de Publicacion: Mayo de 2011
+    </div>
+
+    <div style="position:absolute;left:450px;top:2380px">
+        Numero de Comic = 5
+    </div>
+
+</form>
+<br>
+
+<form asp-action="Create_Marvel_Products_logica18" method="post" enctype="multipart/form-data">
+    <h2> NightWing</h2>
+    <div>
+
+        <img src="~/fotos/nightwing.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+        <div class="form-group" style="position:absolute;left:450px;top:2700px">
+            <input name="NightWing" type="submit" value="Agregar Carrito" class="btn btn-default" onclick="Listo()" />
+            <input type="hidden" name="NightWingv" value="NightWing" /><br />
+
+
+        </div>
+
+
+
+    </div>
+    <div style="position:absolute;left:450px;top:2470px">
+        Nightwing es un nombre de legado de superhéroe asociado con el planeta Krypton y la familia Batman , que generalmente trabaja junto a un compañero y compañero llamado Flamebird . Originalmente, era un alias usado por una misteriosafigura kryptoniana , y más tarde adoptado por Superman y Van-Zee en la ciudad de botella de Kandor . Más tarde el nombre fue adoptado por el vigilante humano Dick Grayson , tomándolo después de haberse graduado de la posición delcompañero Robin de Batman .. Dick Grayson era el hijo de John y Mary Grayson.
+        La familia fue un acto de circo que se realizó en el circo de Haly. Una noche, Dick ve a sus padres asesinados por un jefe de la mafia que quiere vengarse del dueño del circo, Haly, y casualmente Bruce Wayne, (también conocido como Batman) es testigo del acto terrorífico y se ofrece a llevar al joven huérfano a su lado, recordando que una vez fue así. Dick en su estado actual. Dick ya tenía grandes habilidades de detective y pronto descubrió que el multimillonario playboy Bruce Wayne era el mismo Caballero Oscuro.
+        Bruce aceptó tomar a Dick bajo su ala como el primer Robin de muchos. Pasaron muchos años y Dick se hizo demasiado viejo para permanecer bajo el cuidado de Batman y pronto tomó un nombre de superhéroe propio, ¡Nightwing! El título de Nightwing también estuvo en manos de Chris Kent , General ZodEl hijo que vivió en New Krypton .
+    </div>
+
+    <div style="position:absolute;left:450px;top:2730px">
+        Precio:  130 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:2750px">
+        Fecha de Publicacion: Julio de 1963
+    </div>
+
+    <div style="position:absolute;left:450px;top:2770px">
+        Numero de Comic = 1
+    </div>
+</form>
+<br>
+
+<form asp-action="Create_Marvel_Products_logica19" method="post" enctype="multipart/form-data">
+    <h2> AquaMan</h2>
+    <div>
+
+        <img src="~/fotos/aquaman.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+        <div class="form-group" style="position:absolute;left:450px;top:3100px">
+            <input name="AquaMan" type="submit" value="Agregar Carrito" class="btn btn-default" onclick="Listo()" />
+            <input type="hidden" name="AquaManb" value="AquaMan" /><br />
+
+
+        </div>
+
+    </div>
+    <div style="position:absolute;left:450px;top:2850px">
+        Aquaman , también conocido como Arthur Curry y Orin , es un superhéroe y el gobernante de los mares. Como el rey de la Atlántida y otros territorios submarinos, técnicamente controla la mayor parte del planeta. Sus habilidades incluyen súper fuerza, durabilidad, súper velocidad, permanecer bajo el agua por tiempo indefinido y telepatía, que utiliza para comunicarse con la vida marina.
+        Su naturaleza acuática significa que requiere agua regularmente a riesgo de deshidratación, aunque es perfectamente capaz de permanecer en tierra durante largos períodos de tiempo.
+        La familia Aquaman también incluye a su esposa Mera y sus patadas laterales Aqualad y Aquagirl , junto con otros, luchando juntos contravillanos .
+        También es miembro fundador de la Liga de la Justicia de América . Arthur Joseph Curry fue su sucesor después de que muriera el original, y tuvo sus propias aventuras durante varios años, hasta que Orin resucitó durante Blackest Night y reclamó su título. Aquaman fue creado por Mort Weisinger y Paul Norris , apareciendo por primera vez en More Fun Comics # 73 . ( 1941 )
+    </div>
+
+    <div style="position:absolute;left:450px;top:3140px">
+        Precio:  110 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:3160px">
+        Fecha de Publicacion: Julio de 1941
+    </div>
+
+    <div style="position:absolute;left:450px;top:3180px">
+        Numero de Comic = 15
+    </div>
+</form>
+<br>
+<form asp-action="Create_Marvel_Products_logica19" method="post" enctype="multipart/form-data">
+    <h2> SuperGirl</h2>
+    <div>
+
+        <img src="~/fotos/supergirl.jpg" alt="Foto de Contacto" width="300" height="300" />
+        <div class="form-group" style="position:absolute;left:450px;top:3500px">
+            <input name="SuperGirl" type="submit" value="Agregar Carrito" class="btn btn-default" onclick="Listo()" />
+            <input type="hidden" name="SuperGirlc" value="SuperGirl" /><br />
+
+
+        </div>
+
+    </div><div style="position:absolute;left:450px;top:3540px">
+        Precio:  125 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:3560px">
+        Fecha de Publicacion: agosto de 1958
+    </div>
+
+    <div style="position:absolute;left:450px;top:3580px">
+        Numero de Comic = 8
+    </div>
+
+    <div style="position:absolute;left:450px;top:3230px">
+        Supergirl es Supergirl , Superman ' primo s desde el planeta Krypton y uno de los héroes más poderosos del universo. Ella ha sido miembro de la Liga de la Justicia , la Legión de Superhéroes y el Cuerpo de Linternas Rojas .
+        Elsobrenombre de" Supergirl " es un nombre heredado también utilizado por otras superhéroes femeninas involucradas con Superman y la familia de Superman como Matrix , una criatura que cambia de forma de Pocket Universe y que luego se fusionaría con una mujer llamada Linda Danvers desarrollando poderes angelicales.
+        Power Girl es laVersión tierra-dos . Supergirl apareció por primera vez como un personaje de ficción de una sola vez en Superman # 123 por Otto Binder y Dick Sprang .
+        Supergirl (Kara Zor-El) fue recreada por Otto Binder y Al Plastino , apareciendo por primera vez en Action Comics # 252 . ( 1959 )
+
+    </div>
+</form>
+<br>
+<form asp-action="Create_Marvel_Products_logica20" method="post" enctype="multipart/form-data">
+
+    <h2> Green Latern</h2>
+
+    <div>
+
+        <img src="~/fotos/green.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+        <div class="form-group" style="position:absolute;left:450px;top:3960px">
+            <input name="Green Latern" type="submit" value="Agregar Carrito" class="btn btn-default" onclick="Listo()" />
+            <input type="hidden" name="Green Laternb" value="Green Latern" /><br />
+
+
+        </div>
+
+    </div><div style="position:absolute;left:450px;top:4000px">
+        Precio:  140 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:4020px">
+        Fecha de Publicacion: Julio de 1940
+    </div>
+
+    <div style="position:absolute;left:450px;top:4040px">
+        Numero de Comic = 11
+    </div>
+    <div style="position:absolute;left:450px;top:3620px">
+        Green Lantern es un nombre que ha sido usado por muchos personajes en el Universo DC y dos franquicias distintas. El original durante la Edad de Oro fue el hombre de negocios Alan Scott , que llevaba un anillo de poder mágicoque creaba construcciones de energía y tenía que cargarse con su linterna mística. " Green Lantern " se volvió a imaginar en la Edad de Plata como piloto de prueba Hal Jordan , miembro de una fuerza intergaláctica de mantenimiento de la paz llamada Green Lantern Corps .
+        Los Guardianes del Universo en Oa dan estos anillos de Faroles controlados por fuerza de voluntad, y enviarlos a patrullar los 3600 sectores del universo conocido. Se dijo que Jordan era miembro de la Liga de la Justicia en la Tierra-Uno , y se decía que Scott era miembro de la Sociedad de la Justicia en la Tierra-Dos . Sus líneas de tiempo se fusionaron durante la Crisis en las Tierras Infinitas , y se explicó que el anillo mágico de Scott se conecta con el Corazón Estelar . Ha habido varios otros Linternas Verdes humanas del Sector 2814 .
+        El descarado Guy Gardner y más tarde el arquitecto John Stewart fueron presentados originalmente como sustitutos de Jordan. Kyle Raynerse convirtió en el quinto y único Linterna Verde cuando Jordan se convirtió en el malvado Parallax y destruyó el Cuerpo durante el Crepúsculo Esmeralda . El Cuerpo desde entonces ha sido reconstruido con todos los Faroles sirviendo simultáneamente. El ingeniero musulmán Simon Baz se convertiría en el sexto. La víctima del PTSD, Jessica Cruz, se convirtió en la séptima después de heredar el Anillo de Volthoom de Power Ring of the Crime Syndicate .
+        La versión de Alan Scott de Green Lantern fue creada por Bill Finger y Martin Nodell, apareciendo por primera vez en All-American Comics # 16 . ( 1940 ) La versión de Hal Jordan fue creada por John Broome y Gil Kane después de un concepto inicial de Julius Schwartz , apareciendo por primera vez en Showcase # 22 . ( 1959 )
+    </div>
+
+</form>
+
+<script>
+    function Listo() {
+
+        alert("Se ha agregado este articulo al carrito ,pueder ver detalles del carrito  en la seccion de arriba de la pagina")
+
+    }
+</script>

@@ -1,0 +1,446 @@
+﻿
+@model IEnumerable<Tienda.Controllers.Productos.CreateComicCommand>
+
+@{
+    ViewData["Title"] = "Create_Marvel_Products";
+}
+
+<form asp-action="go" method="post" enctype="multipart/form-data">
+
+    <input name="carrito" type="submit" value="Carrito" class="btn btn-default" style="width:200px;height:50px;position:absolute;left:1100px;background-color:#FFFF00" />
+
+</form>
+
+<form asp-action="Pedido_go" method="post" enctype="multipart/form-data">
+
+    <input name="carrito" type="submit" value="Mis Compras" class="btn btn-default" style="width:200px;height:50px;position:absolute;left:800px;background-color:#FFFF00" />
+
+</form>
+
+
+<div style="color:#DF1616">
+
+    <h1> Marvel</h1>
+
+</div>
+
+
+@if (Model.Count() == 1)
+{
+
+    <div style="width:200px;height:50px;position:absolute;left:1100px;color:#DF1616">
+        HAY UN ARTICULO EN EL CARRITO
+    </div>
+
+
+}
+
+@if (Model.Count() > 1)
+{
+
+    <div style="width:200px;height:50px;position:absolute;left:1100px;color:#DF1616">
+        HAY  @Model.Count() ARTICULOS EN EL CARRITO
+    </div>
+
+
+}
+
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+<form asp-action="Create_Marvel_Products_logica" method="post" enctype="multipart/form-data">
+
+
+    <h2> Old Man Logan </h2>
+    <div>
+
+        <img src="~/fotos/old man logan.png" alt="Foto de Contacto" width="300" height="300">
+    </div>
+
+    <input type="hidden" name="Logan" value="Logan" />
+    <input type="hidden" name="Descripcion1" value="Comúnmente conocido como Old Man Logan , esta versión de Wolverine proviene de un futuro en el que los villanos destruyeron todo lo bueno del mundo, incluida su familia.
+    Ahora atrapado en un mundo que no es el suyo, Logan lucha para evitar que su futuro llegue a suceder" />
+
+    }
+
+    <div style="position:absolute;left:450px;top:300px" class="form-group">
+        <input name="logansub" type="submit" value="Agregar al Carrito" class="btn btn-default" onclick="Listo()" />
+
+    </div>
+    
+</form>
+
+<div style="position:absolute;left:450px;top:170px" name=" Descripcion2">
+
+    Comúnmente conocido como "Old Man Logan", esta versión de Wolverine proviene de un futuro en el que los villanos destruyeron todo lo bueno del mundo, incluida su familia.
+    Ahora atrapado en un mundo que no es el suyo, Logan lucha para evitar que su futuro llegue a suceder.
+
+</div>
+
+<div style="position:absolute;left:450px;top:340px">
+    Precio:  125 Pesos
+</div>
+<div style="position:absolute;left:450px;top:360px">
+    Fecha de Publicacion:  Agosto 2008
+</div>
+
+<div style="position:absolute;left:450px;top:380px">
+    Numero de Comic = 1
+</div>
+<br>
+
+<form asp-action="Create_Marvel_Products_logica2" method="post" enctype="multipart/form-data">
+    <h2>Fantastic Four</h2>
+    <div>
+
+        <img src="~/fotos/fantastic four.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+        <div style="position:absolute;left:450px;top:770px" class="form-group">
+            <input name="fantastic4" type="submit" value="Agregar al Carrito" class="btn btn-default" onclick="Listo()" />
+
+
+
+        </div>
+        <input type="hidden" name="Cuatro Fantasticos" value="Fantastic" /> <br />
+
+
+    </div>
+
+    <div style="position:absolute;left:450px;top:580px">
+        El ingeniero aeronáutico brillante Reed Richards inadvertidamente creó los Cuatro Fantásticos después de decidir que hacer un vuelo de prueba no autorizada en el espacio usando un cohete experimental de su propio diseño.
+        Mientras que el cohete podría haber hecho posible viajar a otros sistemas estelares, financistas de Reed estaban perdiendo interés. La novia de Reed, Susan Storm y su hermano menor Johnny insistió en unirse a Reed en el vuelo.
+        El viejo amigo de Reed, Ben Grimm estaba convencido de poner a prueba el cohete. Una vez en el espacio, el cohete fue bombardeada por una onda de la radiación cósmica.
+        La nave se estrelló de regreso a la Tierra. Al salir de las ruinas de la nave espacial, descubrieron que la radiación había mutado sus cuerpos y les había dado nuevas habilidades notables.
+        Reed ganó la capacidad de estirar su cuerpo y extremidades, Johnny era capaz de volar y llegar a ser envuelto en llamas que podía controlar, y Sue fue capaz de curvar la luz alrededor de su cuerpo y se convierten en invisibles.
+        Ben ganó fuerza increíble y durabilidad, pero su cuerpo se transformó trágicamente. Ahora tenía un color naranja muscular, piel como una roca.
+
+    </div>
+
+    <div style="position:absolute;left:450px;top:810px">
+        Precio:  125 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:830px">
+        Fecha de Publicacion: Noviembre de 1961 Diciembre de 2005
+    </div>
+
+    <div style="position:absolute;left:450px;top:850px">
+        Numero de Comic = 1
+    </div>
+
+</form>
+<br>
+<form asp-action="Create_Marvel_Products_logica3" method="post" enctype="multipart/form-data">
+    <h2>Marvel Zombies</h2>
+
+    <div>
+
+        <img src="~/fotos/Zombie.png" alt="Foto de Contacto" width="300" height="300" />
+
+        <div class="form-group" style="position:absolute;left:450px;top:1180px">
+            <input name="btnzombie" type="submit" value="Agregar al Carrito" class="btn btn-default" onclick="Listo()" />
+
+
+        </div>
+
+        <input type="hidden" name="Marvel Zombies" value=" Marvel Zombies" /> <br />
+
+        <div style="position:absolute;left:450px;top:900px">
+            Cuando un superhéroe no identificado vino a este mundo , trajo una plaga que infectó a los demás, y eventualmente causó un brote de zombis .
+            Esta realidad apareció por primera vez en Ultimate Fantastic Four # 22 , cuando sus Fantastic Four del mundo atrajeron a Reed Richards a su dimensión para comérselo, y luego recibió su propia miniserie , donde los superheores zombificados se enfrentaron al Devorador del mundo, Galactus .
+            Aunque comparte muchos rasgos similares a la Tierra-616 , la cronología se desvía en algunos puntos; por ejemplo, ver a Venom entre los zombis sugiere que las primeras Guerras Secretas ya ocurrieron en esta realidad,  aunque Galactus llegó mucho antes a la Tierra en la Tierra-616;  también,
+            los personajes están usando trajes tradicionales que para este punto no estarían usando; y Steve Rogers es referido como Coronel América en lugar de Capitán América , sin mencionar que ya era el presidente de los Estados Unidos , al igual que su contraparte de la Tierra-1610., pero no para un término completo.
+        </div>
+        <div style="position:absolute;left:450px;top:1220px">
+            Precio:  125 Pesos
+        </div>
+        <div style="position:absolute;left:450px;top:1240px">
+            Fecha de Publicacion:  Diciembre de 2005
+        </div>
+
+        <div style="position:absolute;left:450px;top:1260px">
+            Numero de Comic = 2
+        </div>
+
+    </div>
+</form>
+
+<br>
+
+<h2>Venom</h2>
+
+<form asp-action="Create_Marvel_Products_logica4" method="post" enctype="multipart/form-data">
+    <div>
+
+
+        <img src="~/fotos/venom.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+        <div style="position:absolute;left:450px;top:1540px" class="form-group">
+            <input name="venombtn" type="submit" value="Agregar al Carrito" class="btn btn-default" onclick="Listo()" />
+
+
+        </div>
+
+        <input type="hidden" name="Venom" value="Venom" /> <br />
+
+
+
+        <div style="position:absolute;left:450px;top:1330px">
+            En un intento desesperado por sobrevivir, el Doctor Strange utilizó su magia para transportar a varios héroes venenosos de sus dimensiones a la suya.
+            Con sus nuevos aliados de todo el Multiverso ,se creó una Resistencia para luchar contra los Venenos , una especie alienígena capaz de asimilar a los simbiontes y sus anfitriones.
+            La Resistencia ahora lucha para detener a la Colmena y su ataque.
+        </div>
+
+
+    </div>
+    <div style="position:absolute;left:450px;top:1580px">
+        Precio:  145 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:1600px">
+        Fecha de Publicacion: Noviembre de 2017
+    </div>
+
+    <div style="position:absolute;left:450px;top:1620px">
+        Numero de Comic = 11
+    </div>
+
+</form>
+<br>
+
+<form asp-action="Create_Marvel_Products_logica5" method="post" enctype="multipart/form-data">
+
+    <h2>X Man</h2>
+
+    <div>
+
+        <img src="~/fotos/xman.png" alt="Foto de Contacto" width="300" height="300" />
+
+
+        <div class="form-group" style="position:absolute;left:450px;top:1900px">
+            <input name="xman" type="submit" value="Agrgar al Carrito" class="btn btn-default" onclick="Listo()" />
+
+
+        </div>
+        <input type="hidden" name="Xman" value="X man" /> <br />
+
+    </div>
+    <div style="position:absolute;left:450px;top:1710px">
+
+        X-Men (conocido como X-men o La Patrulla X en España y Hombres X en Hispanoamérica)es un grupo de superhéroes del Universo Marvel creado por Stan Lee y Jack Kirby, que tuvo su primera aparición en septiembre de 1963.
+        Sus aventuras han sido publicadas en diversos cómics de Marvel Comics, llegando a disfrutar de varias colecciones mensuales dedicadas a ellos. Además, se han realizado varias adaptaciones en series de animación y películas.
+
+    </div>
+
+
+    <div style="position:absolute;left:450px;top:1940px">
+        Precio:  135 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:1960px">
+        Fecha de Publicacion: Septiembre de 1963
+    </div>
+
+    <div style="position:absolute;left:450px;top:1980px">
+        Numero de Comic = 4
+    </div>
+
+</form>
+
+<br>
+
+<form asp-action="Create_Marvel_Products_logica6" method="post" enctype="multipart/form-data">
+    <h2>The Defenders</h2>
+
+    <div>
+
+        <img src="~/fotos/the defenders.png" alt="Foto de Contacto" width="300" height="300" />
+
+        <div class="form-group" style="position:absolute;left:450px;top:2300px">
+            <input name="defenders" type="submit" value="Agregar al Carrito" class="btn btn-default" onclick="Listo()" />
+
+
+        </div>
+
+        <input type="hidden" name="The Defenders" value="The Defenders" /> <br />
+    </div>
+
+    <div style="position:absolute;left:450px;top:2100px">
+
+        Cuando el trío de héroes Daredevil , Iron Fist y Luke Cage interfirieron con las operaciones del señor del crimen Diamondback , recibieron fuertes golpes en represalia.Mientras buscaban pistas sobre Diamondback junto con la esposa de Luke, Jessica Jones , Daredevil notó que podía ayudar a las personas a saber que trabajaban activamente juntas.
+        Continuaron operando como un equipo para investigar Diamondback, y eventualmente llegaron a ser conocidos como los Defensores.
+    </div>
+
+    <div style="position:absolute;left:450px;top:2340px">
+        Precio:  140 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:2360px">
+        Fecha de Publicacion: Noviembre de 2017
+    </div>
+
+    <div style="position:absolute;left:450px;top:2380px">
+        Numero de Comic = 11
+    </div>
+
+</form>
+<br>
+
+<form asp-action="Create_Marvel_Products_logica7" method="post" enctype="multipart/form-data">
+    <h2>Spider Man</h2>
+
+    <div>
+
+
+
+
+        <img src="~/fotos/spiderman.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+
+        <div class="form-group" style="position:absolute;left:450px;top:2670px">
+            <input name="spiderman" type="submit" value="Agregar al Carrito" class="btn btn-default" onclick="Listo()" />
+            <input type="hidden" name="The SpiderMan" value="The SpiderMan" /> <br />
+
+
+        </div>
+
+
+
+    </div>
+    <div style="position:absolute;left:450px;top:2470px">
+        Como resultado de una picadura de araña radioactiva , el estudiante de secundaria Peter Parker desarrolló poderes y habilidades similares a las de una araña .
+        Después de que el egoísmo de Peter provocara indirectamente la muerte de su amado tío Ben , Peter decidió cumplir con el lema de que "con gran poder también debe ser una gran responsabilidad", y de este modo se convirtió en el superhéroe conocido como Spider-Man .
+        El manto de Spider-Man ha sido tomado por varias personas, entre las que destaca el clon de Peter, Ben Reilly , el villano Otto Octavius y su duplicado , y Miles Morales .
+    </div>
+
+    <div style="position:absolute;left:450px;top:2710px">
+        Precio:  135 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:2730px">
+        Fecha de Publicacion: Septiembre de 1963
+    </div>
+
+    <div style="position:absolute;left:450px;top:2750px">
+        Numero de Comic = 4
+    </div>
+
+</form>
+
+<br>
+<form asp-action="Create_Marvel_Products_logica8" method="post" enctype="multipart/form-data">
+    <h2>Infinity Gauntlet</h2>
+    <input type="hidden" name="Infinity Gauntlet" value="Infinity Gauntlet" /> <br />
+
+    <div>
+
+        <img src="~/fotos/thanos.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+        <div class="form-group" style="position:absolute;left:450px;top:3100px">
+            <input name="thanos" type="submit" value="Agregar al Carrito" class="btn btn-default" onclick="Listo()" />
+
+
+        </div>
+
+    </div>
+    <div style="position:absolute;left:450px;top:2880px">
+        The Infinity Gauntlet es una miniserie de seis números escrita por Jim Starlin , escrita por George Perez y escrita por Ron Lim publicada en 1991.
+        Mistress Death está molesta porque el equilibrio entre la vida y la muerte recientemente no ha estado a su favor.
+        Su solución es darle a su ardiente seguidor, Thanos , la oportunidad de renacer y llevarlo a cabo con la misión de matar la mitad de la vida en el universo.
+        A pesar de sus poderes, Thanos se da cuenta de que su misión es casi imposible.
+        Al recordar las gemas infinitas que fueron fundamentales en su muerte, miró hacia el pozo infinito para descubrir sus secretos.
+        Él adivina la verdadera naturaleza de las gemas, y sus dueños actuales.
+    </div>
+
+    <div style="position:absolute;left:450px;top:3140px">
+        Precio:  150 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:3160px">
+        Fecha de Publicacion: Julio de 1991
+    </div>
+
+    <div style="position:absolute;left:450px;top:3180px">
+        Numero de Comic = 6
+    </div>
+</form>
+<br>
+
+<form asp-action="Create_Marvel_Products_logica9" method="post" enctype="multipart/form-data">
+    <h2>Thor / Hulk</h2>
+
+    <div>
+
+        <img src="~/fotos/thorhulk.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+        <div class="form-group" style="position:absolute;left:450px;top:3500px">
+            <input name="thor" type="submit" value="Agregar al Carrito" class="btn btn-default" onclick="Listo()" />
+
+            <input type="hidden" name="Thor/Hulk" value="Thor/Hulk" /> <br />
+
+        </div>
+
+    </div><div style="position:absolute;left:450px;top:3540px">
+        Precio:  150 Pesos
+    </div>
+
+    <div style="position:absolute;left:450px;top:3560px">
+        Fecha de Publicacion: Julio de 2006
+    </div>
+
+    <div style="position:absolute;left:450px;top:3580px">
+        Numero de Comic = 4
+    </div>
+
+    <div style="position:absolute;left:450px;top:3270px">
+        Thor es un superhéroe que aparece en los cómics publicados por Marvel Comics . El personaje está basado en el dios Thor de la mitología nórdica.
+        Thor aparece en la película de televisión de acción en vivo The Incredible Hulk Returns (1988). Thor fue interpretado por Eric Allan Kramer, y Donald Blake por Steve Levitt. En esta versión, Blake no se transforma en Thor, sino que eran dos individuos separados.
+        La primera vez que aparece Thor es cuando Blake lo llama a aparecer, pero Thor hace que Banner se transforme en Hulk y luchan, pero nadie gana. Entonces él ayuda a Hulk.
+        Thor aparece como protagonista en el cortometraje animado directo a video Hulk vs. Thor (2009), con la voz de Matthew Wolf.
+        Thor hace una breve aparición en la película Planet Hulk (2010) junto a Beta Ray Bill.
+    </div>
+
+</form>
+<br>
+
+<form asp-action="Create_Marvel_Products_logica10" method="post" enctype="multipart/form-data">
+    <h2>Civil War 2</h2>
+
+    <div>
+
+        <img src="~/fotos/civil war 2.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+        <div class="form-group" style="position:absolute;left:450px;top:3880px">
+            <input name="civil" type="submit" value="Agregar al Carrito" class="btn btn-default" onclick="Listo()" />
+            <input type="hidden" name="Civil War 2" value="Civil War 2" /> <br />
+
+        </div>
+
+    </div><div style="position:absolute;left:450px;top:3920px">
+        Precio:  150 Pesos
+    </div>
+    <div style="position:absolute;left:450px;top:3940px">
+        Fecha de Publicacion: Junio de 2016
+    </div>
+
+    <div style="position:absolute;left:450px;top:3960px">
+        Numero de Comic = 2
+    </div>
+    <div style="position:absolute;left:450px;top:3650px">
+        Un precog inhumano llamado Ulysses Cain que recientemente había sido llevado a los Inhumanos ayudó a salvar el día a un Destructor Celestial cuando Medusa usó la información de una visión para advertir a los Vengadores .
+        Durante una fiesta de celebración, los héroes descubrieron la fuente del conocimiento del Inhumano.
+        El Capitán Marvel quería que Ulysses trabajara con los Ultimates , con el fin de abordar los desastres antes de que sucedieran, pero Iron ManSe opuso a la idea, sugiriendo que era peligroso dar por sentado sus visiones por varias razones.
+        El hecho de que fuera posible evitar los eventos que Caín vio significaba que no tenía acceso a nada de piedra, además, poco se sabía sobre cómo funcionaban los poderes de Ulises, incluida su eficacia.
+        Stark también cuestionó la moralidad de detener y castigar a alguien por un desastre que potencialmente podría hacer, y tal vez ni siquiera sepa que lo haría, sin embargo, Carol se mantuvo inflexible en el uso de Caín, considerando que había funcionado perfectamente para detener a Celestial.
+    </div>
+
+</form>
+
+
+
+<script>
+    function Listo() {
+
+        alert("Se ha agregado este articulo al carrito ,pueder ver detalles del carrito  en la seccion de arriba de la pagina")
+
+
+
+    }
+
+
+</script>

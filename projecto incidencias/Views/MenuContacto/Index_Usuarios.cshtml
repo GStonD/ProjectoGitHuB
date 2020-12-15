@@ -1,0 +1,166 @@
+﻿@model IEnumerable<projecto_incidencias.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index_Usuarios";
+}
+
+<h4>Usuarios</h4>
+
+<p>
+    <a asp-action="Index">volver al inicio</a>
+
+
+
+
+</p>
+
+
+
+
+
+
+<h4>Tecnico Externo  </h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.APELLIDO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TIPO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PUESTO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AREA)
+            </th>
+          
+        </tr>
+    </thead>
+
+
+
+
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.TIPO.Equals("Tecnico Externo"))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APELLIDO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TIPO)
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.PUESTO)
+                      
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.AREA)
+                        
+                    </td>
+                 
+                    <td>
+                    @Html.ActionLink("Editar usuario", "Edit_usuario", new { id = item.ID }) |
+                @Html.ActionLink("Borrar usuario", "Delete_usuario", new { id = item.ID}) |
+          
+                        
+                    </td>
+                </tr>
+            }
+        }
+
+
+
+
+
+    </tbody>
+</table>
+
+<h4>Tecnico Interior de ITC</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.APELLIDO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TIPO)
+            </th>
+            <th>
+               @Html.DisplayNameFor(model => model.PUESTO)
+                
+            </th>
+            <th>
+               @Html.DisplayNameFor(model => model.AREA)
+                
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.TIPO.Equals("Tecnico Interior de ITC"))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APELLIDO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TIPO)
+                    </td>
+                    <td>
+
+                     @Html.DisplayFor(modelItem => item.PUESTO)
+                      
+                    </td>
+                    <td>
+
+                          @Html.DisplayFor(modelItem => item.AREA)
+                       
+                    </td>
+                    
+                    <td>
+                                   @Html.ActionLink("Editar usuario", "Edit_usuario", new { id = item.ID }) |
+               @Html.ActionLink("Borrar usuario", "Delete_usuario", new { id = item.ID})  |
+       
+                    </td>
+                </tr>
+            }
+        }
+
+
+    </tbody>
+</table>
+

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Tienda.Controllers.Productos.CreateCompra>
+
+@{
+    ViewData["Title"] = "Leer_Compras";
+}
+
+<h2>Leer Compras</h2>
+
+<p>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio_Venta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_con_Impuesto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                Usuario
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio_Venta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_con_Impuesto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.ActionLink("SI QUIERE CAMBIAR DE ESTADO DE COMPRA CLICK  AQUI ", "Estado", new { id = item.ID })
+            </td>
+           <td>
+            @Html.ActionLink("ELIMINAR COMPRA", "DeleteCompras", new { id = item.ID })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Ir a Productos de Marvel ", "Create_Marvel_Products")
+@Html.ActionLink("Ir a Productos de DC", "Create_DC_Products")

@@ -1,0 +1,117 @@
+@model projecto_incidencias.Models.Equipo
+
+@{
+    ViewData["Title"] = "Create_redes";
+}
+
+<h4>Red</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create_Redes">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ID" class="control-label"></label>
+                <input asp-for="ID" class="form-control" type  = "number" />
+                <span asp-validation-for="ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOMBRE" class="control-label"></label>
+                <input asp-for="NOMBRE" class="form-control" />
+                <span asp-validation-for="NOMBRE" class="text-danger"></span>
+            </div>
+          
+                                    <div class="form-group">
+                <label asp-for="AULA " class="AULA"></label>
+
+     <select asp-for="AULA" class="container" name ="AULA">
+@foreach (var item in Model.AULAS)
+{
+    <option value="@item.NOMBRE">@item.NOMBRE</option>
+}
+                    
+                   
+                </select>
+            </div>
+                           <div class="form-group">
+                <label asp-for="AREA" class="AREA"></label>
+
+     <select asp-for="AREA" class="container">
+
+                    <option value="BIOQUIMICA">BIOQUIMICA</option>
+                    <option value="UNIDAD ACADEMICA">UNIDAD ACADEMICA </option>
+                   <option value="UNIDAD DE POSTGRADO">UNIDAD DE POSTGRADO</option>
+                    <option value="SISTEMAS - CENTRO DE COMPUTO">SISTEMAS - CENTRO DE COMPUTO</option>
+                    <option value="INDUSTRIAL - EXTRAESCOLARES">INDUSTRIAL - EXTRAESCOLARES </option>
+                    <option value="CONTROL ESCOLAR - COORDINACION -BIBLIOTECA">CONTROL ESCOLAR - COORDINACION -BIBLIOTECA</option>
+                   <option value="ELECTRICA - ELECTRONICA (ISLA MACHO)">ELECTRICA - ELECTRONICA (ISLA MACHO)</option>
+                  <option value="MECATRONICA - LENGUAS EXTRANJERAS">MECATRONICA - LENGUAS EXTRANJERAS</option>
+                </select>
+            </div>
+   
+            <div class="form-group">
+                <label asp-for="Fecha_adquisicion_hw" class="control-label"></label>
+                <input asp-for="Fecha_adquisicion_hw" class="form-control" />
+                <span asp-validation-for="Fecha_adquisicion_hw" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="garantia" class="control-label"></label>
+                <input asp-for="garantia" class="form-control" placeholder="Proporcion una ifnformacio leve como expiracion etc."/>
+                <span asp-validation-for="garantia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ficha_tecnica_hd" class="control-label"></label>
+                <input asp-for="ficha_tecnica_hd" class="form-control" placeholder="si es un equipo prporcione informacion porfavor"/>
+                <span asp-validation-for="ficha_tecnica_hd" class="text-danger"></span>
+            </div>
+              <div class="form-group">
+                <label asp-for="num_provee" class="control-label"></label>
+                <input asp-for="num_provee" class="form-control" type  = "number"/>
+                <span asp-validation-for="num_provee" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="conectividad_red" class="control-label"></label>
+                <input asp-for="conectividad_red" class="form-control" placeholder="Proporcione informacion sobre a donde esta conectada ,puertos etc"/>
+                <span asp-validation-for="conectividad_red" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script>
+    function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+    function aviso() {
+
+       alert(" SI LA CLAVE YA EXISTE ,ENTONCES NO SE CREARA EL CONTACTO!!!")
+
+
+    }
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Tienda.Controllers.Productos.CreateComicCommand>
+@{
+    ViewData["Title"] = "Carrito";
+}
+
+<h2>Carrito</h2>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Costo)
+            <th>
+                @Html.DisplayNameFor(model => model.Numero_de_comic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_de_Publicacion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+
+
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Costo)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero_de_comic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha_de_Publicacion)
+                </td>
+                <td>
+
+                    @Html.ActionLink("Quitar del carrito", "Delete", new { id = item.ID })
+
+
+                </td>
+
+            </tr>
+        }
+   
+    </tbody>
+</table>
+
+<form asp-action="Totalizar" method="post" enctype="multipart/form-data">
+    <input name="Comprar" type="submit" value="Totalizar Compra" class="btn btn-default" />
+
+</form>
+@Html.ActionLink("Ir a Productos de Marvel ", "Create_Marvel_Products")
+@Html.ActionLink("Ir a Productos de DC", "Create_DC_Products")
+@Html.ActionLink("Ver Detalles de Mis Compras ","")
+

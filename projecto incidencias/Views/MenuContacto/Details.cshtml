@@ -1,0 +1,92 @@
+﻿@model testx.Models.Contacto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contacto</h4>
+
+    <img src="~/fotos/@Model.foto"  alt="Foto de Contacto" />
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+
+            @Html.DisplayNameFor(model => model.tipocontacto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tipocontacto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.correo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.correo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.apellido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.edad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.edad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.foto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.foto)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h5>Editar este Contacto</h5>
+    @Html.ActionLink("Click AQUÌ", "Edit", new { id = Model.id }) |
+    <h5>Ver los contactos referentes a este</h5>
+    @Html.ActionLink("Click AQUÌ", "Detalles_de_Referencias", new { id = Model.id }) |
+
+    <h5>  Quieres borrar alguna referencias de este contacto</h5>
+    @Html.ActionLink(" CLICK AQUI ", "Borrar_Referencia", new { id = Model.id })
+
+
+    <br />
+    <a asp-action="Index">Back to List</a>
+</div>

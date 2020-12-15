@@ -1,0 +1,349 @@
+﻿@model IEnumerable<projecto_incidencias.Models.Servicio>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<p>
+    <a asp-action="Puente">Agregar Equipo</a>
+    <a asp-action="Create">Agregar Usuario</a>
+    <a asp-action="Create_aula">Agregar Aula</a>
+    <a asp-action="Create_Servicio">Agregar servicios</a>
+      <a asp-action="Index_Cambios">Lista de Configuraciones</a>
+    <a asp-action="Index_Usuarios">Lista de Usuarios</a>
+    <a asp-action="Index_Areas">Lista de Aulas</a>
+     <a asp-action="Index_equipo">Lista de Equipos</a>
+
+
+
+    <h4> INCIDENCIAS</h4>
+
+
+</p>
+
+
+<h4> EN PROCESO</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE_TECNICO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FECHA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AREA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AULA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EQUIPO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPCION)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.ESTADO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.ESTADO.Equals("PROCESO"))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE)
+                         @Html.ActionLink("Detalles de usuario", "Detalles_Usuarios", new { id = item.NOMBRE_ID}) |
+                    </td>
+                    <td>
+                  
+                        @Html.DisplayFor(modelItem => item.NOMBRE_TECNICO)
+                        @Html.ActionLink("Detalles de usuario", "Detalles_Usuarios", new { id = item.NOMBRE_TECNICO_ID}) |
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FECHA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AREA)
+ 
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AULA)
+                         @Html.ActionLink("Detalles de  Aula", "Detalles_Aula", new { id = item.AULA_ID}) |
+                    </td>
+                    <td>
+                    
+                        @Html.DisplayFor(modelItem => item.EQUIPO)
+                        @Html.ActionLink("Detalles de Equipo", "Detalles_Equipo", new { id = item.EQUIPO_ID}) |
+                     
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ESTADO)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar servicio", "Edit_Servicio", new { id = item.ID}) |
+                        @Html.ActionLink("borrar servicio", "Delete_servicio", new { id = item.ID }) |
+                   
+                </tr>
+            }
+        }
+
+
+    </tbody>
+</table>
+<h4> PENDIENTES</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE_TECNICO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FECHA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AREA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AULA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EQUIPO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPCION)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.ESTADO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.ESTADO.Equals("PENDIENTE"))
+            {
+               <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE)
+                         @Html.ActionLink("Detalles de usuario", "Detalles_Usuarios", new { id = item.NOMBRE_ID}) |
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE_TECNICO)
+                         @Html.ActionLink("Detalles de usuario", "Detalles_Usuarios", new { id = item.NOMBRE_TECNICO_ID}) |
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FECHA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AULA)
+                        @Html.ActionLink("Detalles de  Aula", "Detalles_Aula", new { id = item.AULA_ID}) |
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EQUIPO)
+                          @Html.ActionLink("Detalles de Equipo", "Detalles_Equipo", new { id = item.EQUIPO_ID}) |
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ESTADO)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar servicio", "Edit_Servicio", new { id = item.ID}) |
+                        @Html.ActionLink("borrar servicio", "Delete_servicio", new { id = item.ID }) |
+                    </td>
+                </tr>
+            }
+        }
+
+
+    </tbody>
+</table>
+
+<h4> TERMINADOS </h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE_TECNICO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FECHA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AREA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AULA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EQUIPO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPCION)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.ESTADO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.ESTADO.Equals("TERMINADO"))
+            {
+        <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE)
+                         @Html.ActionLink("Detalles de usuario", "Detalles_Usuarios", new { id = item.NOMBRE_ID}) |
+                        
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE_TECNICO)
+                         @Html.ActionLink("Detalles de usuario", "Detalles_Usuarios", new { id = item.NOMBRE_TECNICO_ID}) |
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FECHA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AULA)
+                        @Html.ActionLink("Detalles de  Aula", "Detalles_Aula", new { id = item.AULA_ID}) |
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EQUIPO)
+                         @Html.ActionLink("Detalles de Equipo", "Detalles_Equipo", new { id = item.EQUIPO_ID}) |
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ESTADO)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar servicio", "Edit_Servicio", new { id = item.ID}) |
+                        @Html.ActionLink("borrar servicio", "Delete_servicio", new { id = item.ID }) |
+                    </td>
+                </tr>
+            }
+        }
+
+
+    </tbody>
+</table>
+
+<h4> RECHAZADOS </h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE_TECNICO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FECHA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AREA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AULA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EQUIPO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPCION)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.ESTADO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.ESTADO.Equals("RECHAZADO"))
+            {
+               <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE)
+                         @Html.ActionLink("Detalles de usuario", "Detalles_Usuarios", new { id = item.NOMBRE_ID}) |
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE_TECNICO)
+                         @Html.ActionLink("Detalles de usuario", "Detalles_Usuarios", new { id = item.NOMBRE_TECNICO_ID}) |
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FECHA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AULA)
+                         @Html.ActionLink("Detalles de  Aula", "Detalles_Aula", new { id = item.AULA_ID}) |
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EQUIPO)
+                          @Html.ActionLink("Detalles de Equipo", "Detalles_Equipo", new { id = item.EQUIPO_ID}) |
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ESTADO)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar servicio", "Edit_Servicio", new { id = item.ID}) |
+                        @Html.ActionLink("borrar servicio", "Delete_servicio", new { id = item.ID }) |
+                    </td>
+                </tr>
+            }
+        }
+
+
+    </tbody>
+</table>

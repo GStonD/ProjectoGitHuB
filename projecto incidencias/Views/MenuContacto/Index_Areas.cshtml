@@ -1,0 +1,81 @@
+﻿@model IEnumerable<projecto_incidencias.Models.Aula>
+
+@{
+    ViewData["Title"] = "Index_Areas";
+}
+
+<h4>AREAS</h4>
+
+<p>
+    <a asp-action="Index">volver al inicio</a>
+
+
+
+
+</p>
+
+
+
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.AREA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPCION)
+            </th>
+         
+          
+           <th></th>
+        </tr>
+    </thead>
+<tbody>
+
+        @foreach (var item in Model)
+        {
+            
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DESCRIPCION)
+                    </td>
+                  
+                 
+                    <td>
+                    @Html.ActionLink("Editar Aula", "Edit_Aula", new { id = item.ID }) |
+                @Html.ActionLink("Borrar Aula", "Delete_aula", new { id = item.ID}) |
+                 @Html.ActionLink("Delete", "Detalles", new { id = item.ID }) |
+                        
+                    </td>
+                </tr>
+            
+        }
+
+
+
+
+
+    </tbody>
+</table>
+
+
+

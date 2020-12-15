@@ -1,0 +1,92 @@
+﻿@model projecto_incidencias.Models.Equipo
+
+@{
+    ViewData["Title"] = "Delete_Equipo";
+}
+
+<h4>Borrar Equipo</h4>
+
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TIPO)
+        </dd>
+         <dt>
+            @Html.DisplayNameFor(model => model.AULA)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AULA)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AREA)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AREA)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_adquisicion_hw)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_adquisicion_hw)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.garantia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.garantia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ficha_tecnica_hd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ficha_tecnica_hd)
+        </dd>
+         <dt>
+            @Html.DisplayNameFor(model => model.num_provee)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.num_provee)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.licencia_hw )
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.licencia_hw )
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_instalacion_hw )
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fecha_instalacion_hw )
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.conectividad_red )
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.conectividad_red )
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete_Equipo">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

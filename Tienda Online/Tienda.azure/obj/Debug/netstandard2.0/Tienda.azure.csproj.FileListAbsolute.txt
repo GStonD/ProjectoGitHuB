@@ -1,0 +1,12 @@
+C:\Users\Gomez\Documents\src\Tienda.azure\bin\Debug\netstandard2.0\Tienda.azure.deps.json
+C:\Users\Gomez\Documents\src\Tienda.azure\bin\Debug\netstandard2.0\Tienda.azure.dll
+C:\Users\Gomez\Documents\src\Tienda.azure\bin\Debug\netstandard2.0\Tienda.azure.pdb
+C:\Users\Gomez\Documents\src\Tienda.azure\obj\Debug\netstandard2.0\Tienda.azure.csprojAssemblyReference.cache
+C:\Users\Gomez\Documents\src\Tienda.azure\obj\Debug\netstandard2.0\Tienda.azure.csproj.CoreCompileInputs.cache
+C:\Users\Gomez\Documents\src\Tienda.azure\obj\Debug\netstandard2.0\Tienda.azure.AssemblyInfoInputs.cache
+C:\Users\Gomez\Documents\src\Tienda.azure\obj\Debug\netstandard2.0\Tienda.azure.AssemblyInfo.cs
+C:\Users\Gomez\Documents\src\Tienda.azure\obj\Debug\netstandard2.0\Tienda.azure.dll
+C:\Users\Gomez\Documents\src\Tienda.azure\obj\Debug\netstandard2.0\Tienda.azure.pdb
+C:\Users\Gomez\Documents\src\Tienda.azure\bin\Debug\netstandard2.0\Tienda.Core.dll
+C:\Users\Gomez\Documents\src\Tienda.azure\bin\Debug\netstandard2.0\Tienda.Core.pdb
+C:\Users\Gomez\Documents\src\Tienda.azure\obj\Debug\netstandard2.0\Tienda.azure.csproj.CopyComplete

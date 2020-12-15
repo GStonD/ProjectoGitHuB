@@ -1,0 +1,43 @@
+﻿@model testx.Models.Contacto
+
+@{
+    ViewData["Title"] = "SubirFoto";
+}
+
+<h3>Foto</h3>
+<img src="~/fotos/@Model.foto"  alt="Foto de Contacto" />
+
+<div class="row">
+    <div class="col-md-4">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Logica" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="Foto" class="control-label"></label>
+                <input type="file" name="Foto" /><br />
+               
+                
+                <input type="hidden" name="idfoto" value="@Model.id" /><br />
+
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Subir" class="btn btn-default" />
+
+
+            </div>
+
+
+        </form>
+      
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

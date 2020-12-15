@@ -1,0 +1,50 @@
+﻿@model projecto_incidencias.Models.Usuario
+@{
+    ViewData["Title"] = "Details_Usuario";
+}
+
+
+
+<div>
+    <h3>Detalles de Usuario</h3>
+
+
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.APELLIDO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AREA)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PUESTO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TIPO)
+        </dd>
+        
+    </dl>
+</div>
+
+<div>
+    <h5>Editar este Contacto</h5>
+    @Html.ActionLink("Click AQUÌ", "Edit", new { id = Model.ID }) |
+    <h5>Ver los contactos referentes a este</h5>
+    @Html.ActionLink("Click AQUÌ", "Detalles_de_Referencias", new { id = Model.ID }) |
+
+    <h5>  Quieres borrar alguna referencias de este contacto</h5>
+    @Html.ActionLink(" CLICK AQUI ", "Borrar_Referencia", new { id = Model.ID })
+
+
+    <br />
+    <a asp-action="Index">Back to List</a>
+</div>

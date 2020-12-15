@@ -1,0 +1,61 @@
+﻿@model projecto_incidencias.Models.Usuario
+@{
+    ViewData["Title"] = "Detalles_Usuarios";
+}
+
+<h3>Detalles de  Usuario </h3>
+
+<div>
+ 
+
+
+<hr />
+    <dl class="dl-horizontal">
+        <dt>
+
+            @Html.DisplayNameFor(model => model.TIPO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TIPO)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.APELLIDO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.APELLIDO)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AREA)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AREA)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PUESTO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PUESTO)
+        </dd>
+        
+    </dl>
+</div>
+
+<div>
+  
+
+
+    <br />
+    <a asp-action="Index">Back to List</a>
+</div>

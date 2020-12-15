@@ -1,0 +1,67 @@
+﻿
+@model IEnumerable<Tienda.Controllers.Productos.CreateComicCommand>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+<br>
+<form asp-action="go" method="post" enctype="multipart/form-data">
+
+    <input name="carrito" type="submit" value="Carrito" class="btn btn-default" style="width:200px;height:50px;position:absolute;left:1100px;background-color:#FFFF00" />
+</form>
+
+<form asp-action="Pedido_go" method="post" enctype="multipart/form-data">
+
+    <input name="carrito" type="submit" value="Mis Compras" class="btn btn-default" style="width:200px;height:50px;position:absolute;left:800px;background-color:#FFFF00" />
+
+</form>
+
+<h1>Categories</h1>
+
+@if (Model.Count() == 1)
+{
+
+    <div style="width:200px;height:50px;position:absolute;left:1100px;color:#DF1616">
+        HAY UN ARTICULO EN EL CARRITO
+    </div>
+
+
+}
+
+@if (Model.Count() > 1)
+{
+
+    <div style="width:200px;height:50px;position:absolute;left:1100px;color:#DF1616">
+        HAY @Model.Count() ARTICULOS EN EL CARRITO
+    </div>
+
+
+}
+
+
+
+
+<div>
+
+    <img src="~/fotos/Marvel.jpg" alt="Foto de Contacto" width="300" height="300">
+
+</div>
+
+<h1>
+    <a asp-action="Create_Marvel_Products">Ver Productos</a>
+
+</h1>
+
+<br>
+
+<div>
+
+    <img src="~/fotos/DC comics.jpg" alt="Foto de Contacto" width="300" height="300" />
+
+
+</div>
+
+<h1>
+    <a asp-action="Create_DC_Products">Ver Productos</a>
+</h1>
+

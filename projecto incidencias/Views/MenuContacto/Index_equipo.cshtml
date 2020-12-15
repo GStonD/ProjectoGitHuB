@@ -1,0 +1,278 @@
+﻿@model IEnumerable<projecto_incidencias.Models.Equipo>
+
+@{
+    ViewData["Title"] = "Index_Equipo";
+}
+
+<h4>Equipos</h4>
+
+<p>
+    <a asp-action="Index">volver al inicio</a>
+
+
+
+
+</p>
+
+
+
+
+
+
+<h4>Equipo Hardware  </h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.AREA)
+            </th>
+          <th>
+                @Html.DisplayNameFor(model => model.AULA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ficha_tecnica_hd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_adquisicion_hw)
+            </th>
+           <th>
+                @Html.DisplayNameFor(model => model.garantia)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.num_provee)
+            </th>
+        
+          
+        </tr>
+    </thead>
+
+
+
+
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.TIPO.Equals("Hardware"))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AULA)
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.ficha_tecnica_hd)
+                      
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.Fecha_adquisicion_hw)
+                        
+                    </td>
+                 <td>
+                         @Html.DisplayFor(modelItem => item.garantia)
+                        
+                    </td>
+                       <td>
+                         @Html.DisplayFor(modelItem => item.num_provee)
+                        
+                    </td>
+                    <td>
+                    @Html.ActionLink("Editar Equipo", "Edit_Equipo_hd", new { id = item.ID }) |
+                @Html.ActionLink("borrar equipo", "Delete_Equipo", new { id = item.ID}) |
+                
+                        
+                    </td>
+                </tr>
+            }
+        }
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.AREA)
+            </th>
+          <th>
+                @Html.DisplayNameFor(model => model.AULA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ficha_tecnica_hd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_adquisicion_hw)
+            </th>
+           <th>
+                @Html.DisplayNameFor(model => model.garantia)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.num_provee)
+            </th>
+        <th>
+                @Html.DisplayNameFor(model => model.licencia_hw)
+            </th>
+          
+        </tr>
+    </thead>
+
+
+
+
+<h4>Equipo Software  </h4>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.TIPO.Equals("Software"))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AULA)
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.ficha_tecnica_hd)
+                      
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.Fecha_adquisicion_hw)
+                        
+                    </td>
+                 <td>
+                         @Html.DisplayFor(modelItem => item.garantia)
+                        
+                    </td>
+                       <td>
+                         @Html.DisplayFor(modelItem => item.num_provee)
+                        
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.licencia_hw)
+                        
+                    </td>
+                    <td>
+                    @Html.ActionLink("Editar Equipo", "Edit_Equipo_sw", new { id = item.ID }) |
+                @Html.ActionLink("borrar equipo", "Delete_Equipo", new { id = item.ID}) |
+                 
+                        
+                    </td>
+                </tr>
+            }
+        }
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.AREA)
+            </th>
+          <th>
+                @Html.DisplayNameFor(model => model.AULA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ficha_tecnica_hd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_adquisicion_hw)
+            </th>
+           <th>
+                @Html.DisplayNameFor(model => model.garantia)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.num_provee)
+            </th>
+        <th>
+                @Html.DisplayNameFor(model => model.conectividad_red)
+            </th>
+          
+        </tr>
+    </thead>
+
+
+
+<h4>Equipo de Red </h4>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.TIPO.Equals("Redes"))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AULA)
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.ficha_tecnica_hd)
+                      
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.Fecha_adquisicion_hw)
+                        
+                    </td>
+                 <td>
+                         @Html.DisplayFor(modelItem => item.garantia)
+                        
+                    </td>
+                       <td>
+                         @Html.DisplayFor(modelItem => item.num_provee)
+                        
+                    </td>
+                     <td>
+                         @Html.DisplayFor(modelItem => item.conectividad_red)
+                        
+                    </td>
+                    <td>
+                    @Html.ActionLink("Editar Equipo", "Edit_Equipo_red", new { id = item.ID }) |
+                @Html.ActionLink("borrar equipo", "Delete_Equipo", new { id = item.ID}) |
+    
+                        
+                    </td>
+                </tr>
+            }
+        }

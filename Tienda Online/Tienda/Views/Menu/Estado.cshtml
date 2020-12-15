@@ -1,0 +1,20 @@
+﻿@model Tienda.Controllers.Productos.CreateCompra
+@{
+    ViewData["Title"] = "Estado";
+}
+
+<h2>Estado</h2>
+
+<form asp-action="Estado_post" method="post" enctype="multipart/form-data">
+    <select name="Seleccione el Estado" class="container">
+        <option value="En Proceso">En Proceso</option>
+        <option value="En Ruta">En Ruta</option>
+        <option value="Completado">Completado</option>
+    </select>
+    <input type="hidden" name="Estadoid" value="@Model.ID" />
+    <input name="BotonEstado" type="submit" value="Guardar" class="btn btn-default" />
+</form>
+
+
+@Html.ActionLink("Ir a Productos de Marvel ", "Create_Marvel_Products")
+@Html.ActionLink("Ir a Productos de DC", "Create_DC_Products")

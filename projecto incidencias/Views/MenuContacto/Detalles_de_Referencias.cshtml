@@ -1,0 +1,56 @@
+﻿@model IEnumerable<testx.Models.Referencia>
+
+@{
+    ViewData["Title"] = "Detalles de Referencias";
+}
+
+<h2>Detalles de Referencias</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+             Clave 
+            </th>
+            <th>
+             Nombre
+            </th>
+            <th>
+             Clave
+            </th>
+            <th>
+             Nombre
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_ContactoA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_ContactoA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_ContactoB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_ContactoB)
+            </td>
+
+            <td>
+                <h5>  Quieres borrar alguna referencias de este contacto</h5>
+                @Html.ActionLink(" CLICK AQUI ", "Borrar_Referencia", new { id = item.id })
+            </td>
+
+        
+        </tr>
+
+            
+        }
+    </tbody>
+</table>

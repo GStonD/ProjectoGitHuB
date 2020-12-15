@@ -1,0 +1,49 @@
+﻿@model projecto_incidencias.Models.Servicio
+
+@{
+    ViewData["Title"] = "Delete_servicio";
+}
+
+<h3>Borrar Servicio</h3>
+
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTADO)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_TECNICO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AULA)
+        </dd>
+          <dd>
+            @Html.DisplayFor(model => model.AREA)
+        </dd>
+           <dd>
+            @Html.DisplayFor(model => model.EQUIPO)
+        </dd>
+       <dd>
+            @Html.DisplayFor(model => model.FECHA)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION)
+        </dd>
+      
+        
+    </dl>
+    
+    <form asp-action="Delete_servicio">
+        <input type="submit" value="Delete_servicio" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

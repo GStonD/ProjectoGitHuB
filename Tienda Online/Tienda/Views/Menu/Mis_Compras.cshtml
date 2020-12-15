@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Tienda.Controllers.Productos.CreateCompra>
+
+@{
+    ViewData["Title"] = "Mis_Compras";
+}
+
+<h2> Mis Compras </h2>
+
+<p>
+
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio_Venta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_con_Impuesto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+              Usuario
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.Role.Equals(User.Identity.Name.ToString()))
+            {
+
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio_Venta)
+            </td>C
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_con_Impuesto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+      
+           
+
+
+        </tr>
+
+            }
+
+        }
+    </tbody>
+
+
+
+
+
+</table>
+@Html.ActionLink("Ir a Productos de Marvel ", "Create_Marvel_Products")
+@Html.ActionLink("Ir a Productos de DC", "Create_DC_Products") 
+
+
+

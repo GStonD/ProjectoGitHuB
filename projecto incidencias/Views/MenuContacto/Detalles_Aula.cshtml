@@ -1,0 +1,51 @@
+﻿@model projecto_incidencias.Models.Aula
+@{
+    ViewData["Title"] = "Detalles_Aula";
+}
+
+<h3>Detalles de  Aula</h3>
+
+<div>
+ 
+
+
+
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+     
+        <dt>
+            @Html.DisplayNameFor(model => model.AREA)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AREA)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION)
+        </dd>
+        
+    </dl>
+</div>
+
+<div>
+  
+
+
+    <br />
+    <a asp-action="Index">Back to List</a>
+</div>

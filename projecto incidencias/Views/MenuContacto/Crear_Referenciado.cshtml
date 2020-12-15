@@ -1,0 +1,63 @@
+﻿
+@model IEnumerable<testx.Models.Contacto>
+@{
+    ViewData["Title"] = "Crear_Referenciado";
+}
+
+<h2>Lista de Contactos</h2>
+
+
+<h4> Seleccione Contacto a referenciar </h4>
+
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form asp-action="Logica2" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <select name="Seleccione el contacto" class="container">
+
+            @foreach (var item in Model)
+            {
+
+
+                <option name=combobox value="@item.nombre"> @item.nombre @item.apellido  </option>
+
+            }
+
+
+
+        </select>
+    </div>
+    @foreach (var item in Model)
+    {
+        if (item.tipocontacto.Equals("akatsukix"))
+        {
+
+
+            <input type="hidden" name="Akatsuki" value="@item.telefono" /><br />
+
+
+        }
+
+    }
+
+    <div class="form-group">
+        <input name="A" type="submit" onclick="myFunction()" value="Submit" class="btn btn-default" />
+    </div>
+
+</form>
+
+<a asp-action="Index">Back to List</a>
+
+
+
+<script>
+    function myFunction() {
+        alert("OK");
+
+    }
+
+</script>
+
+
+
+

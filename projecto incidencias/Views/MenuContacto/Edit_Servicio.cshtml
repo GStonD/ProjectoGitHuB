@@ -1,0 +1,150 @@
+﻿@model projecto_incidencias.Models.Servicio
+
+@{
+    ViewData["Title"] = "Edit_Servicio";
+}
+
+<h4>Editar Servicio</h4>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit_Servicio">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                <label asp-for="ESTADO" class="ESTADO"></label>
+
+     <select asp-for="ESTADO" class="container">
+
+                    <option value="PROCESO">PROCESO</option>
+                    <option value="PENDIENTE">PENDIENTE </option>
+                   <option value="TERMINADO">TERMINADO</option>
+                    <option value="RECHAZADO">RECHAZADO</option>
+                  
+                </select>
+            </div> 
+                
+                           <div class="form-group">
+                <label asp-for="NOMBRE_ID" class="NOMBRE_ID"></label>
+
+     <select asp-for="NOMBRE_ID" class="container" name ="NOMBRE_ID">
+@foreach (var item in Model.USUARIOS)
+{
+
+
+    <option value="@item.ID"+>@item.NOMBRE</option>
+ 
+}
+                    
+                   
+                </select>
+            </div>
+                                          <div class="form-group">
+                <label asp-for="NOMBRE_TECNICO_ID" class="NOMBRE_TECNICO_ID"></label>
+
+     <select asp-for="NOMBRE_TECNICO_ID" class="container"  name ="NOMBRE_TECNICO_ID">
+@foreach (var item in Model.USUARIOS)
+{
+    <option value="@item.ID">@item.NOMBRE</option>
+
+}
+                    
+                   
+                </select>
+            </div>
+     
+                     <div class="form-group">
+                <label asp-for="AREA" class="AREA"></label>
+
+     <select asp-for="AREA" class="container">
+
+                    <option value="BIOQUIMICA">BIOQUIMICA</option>
+                    <option value="UNIDAD ACADEMICA">UNIDAD ACADEMICA </option>
+                   <option value="UNIDAD DE POSTGRADO">UNIDAD DE POSTGRADO</option>
+                    <option value="SISTEMAS - CENTRO DE COMPUTO">SISTEMAS - CENTRO DE COMPUTO</option>
+                    <option value="INDUSTRIAL - EXTRAESCOLARES">INDUSTRIAL - EXTRAESCOLARES </option>
+                    <option value="CONTROL ESCOLAR - COORDINACION -BIBLIOTECA">CONTROL ESCOLAR - COORDINACION -BIBLIOTECA</option>
+                 <option value="ELECTRICA - ELECTRONICA (ISLA MACHO)">ELECTRICA - ELECTRONICA (ISLA MACHO)</option>
+                  <option value="MECATRONICA - LENGUAS EXTRANJERAS">MECATRONICA - LENGUAS EXTRANJERAS</option>
+                </select>
+            </div>
+     
+          
+                              <div class="form-group">
+                <label asp-for="AULA_ID " class="AULA_ID "></label>
+
+     <select asp-for="AULA_ID" class="container" name ="AULA_ID">
+@foreach (var item in Model.AULAS)
+{
+    <option value="@item.ID">@item.NOMBRE</option>
+}
+                    
+                   
+                </select>
+            </div>
+                        <div class="form-group">
+                <label asp-for="EQUIPO_ID" class="EQUIPO_ID"></label>
+
+     <select asp-for="EQUIPO_ID" class="container" name ="EQUIPO_ID">
+@foreach (var item in Model.Equipo)
+{
+    <option value="@item.ID">@item.NOMBRE</option>
+
+}
+                    
+                   
+                </select>
+            </div>
+              <div class="form-group">
+                <label asp-for="FECHA" class="control-label"></label>
+                <input asp-for="FECHA" class="form-control" type  = "text"  onkeypress="return soloLetras(event)"/>
+                <span asp-validation-for="FECHA" class="text-danger"></span>
+            </div>
+               <div class="form-group">
+                <label asp-for="DESCRIPCION " class="control-label"></label>
+                <input asp-for="DESCRIPCION " class="form-control" type  = "text"  onkeypress="return soloLetras(event)"/>
+                <span asp-validation-for="DESCRIPCION " class="text-danger"></span>
+            </div>
+           
+          
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" onclick="aviso()" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script>
+    function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+    function aviso() {
+
+
+
+
+    }
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

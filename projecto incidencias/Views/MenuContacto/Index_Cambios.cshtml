@@ -1,0 +1,94 @@
+﻿@model IEnumerable<projecto_incidencias.Models.Servicio>
+
+@{
+    ViewData["Title"] = "Index_Cambios";
+}
+
+<h4>Lista de Configuraciones actuales</h4>
+
+<p>
+    <a asp-action="Index">volver al inicio</a>
+
+
+
+
+</p>
+
+
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.AREA)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.EQUIPO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CONFIGURACION)
+            </th>
+         <th>
+                @Html.DisplayNameFor(model => model.FECHA_TERMINACION)
+            </th>
+          
+           <th></th>
+        </tr>
+    </thead>
+<tbody>
+
+          
+  @foreach (var item in Model)
+        {
+            if (item.ESTADO.Equals("TERMINADO"))
+            {
+             
+            
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EQUIPO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CONFIGURACION)
+                    </td>
+                   <td>
+                        @Html.DisplayFor(modelItem => item.FECHA_TERMINACION)
+                    </td>
+                 
+                    <td>
+                    @Html.ActionLink("Editar Aula", "Edit_Aula", new { id = item.ID }) |
+                @Html.ActionLink("Borrar Aula", "Delete_aula", new { id = item.ID}) |
+                 @Html.ActionLink("Delete", "Detalles", new { id = item.ID }) |
+                        
+                    </td>
+                </tr>
+            
+        }
+
+        }
+
+        
+
+    </tbody>
+</table>
+
+
+

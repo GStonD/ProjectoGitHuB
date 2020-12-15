@@ -1,0 +1,44 @@
+﻿@model IEnumerable<testx.Models.Referencia>
+@{
+    ViewData["Title"] = "Borrar_Referencia";
+}
+<h2>Lista de Referencias</h2>
+
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form asp-action="Logica3" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <select name="Seleccione la referencia" class="container">
+
+
+            @foreach (var item in Model)
+            {
+
+
+                <option name=combobox value="@item.id_ContactoA"> @item.id_ContactoA @item.nombre_ContactoA @item.id_ContactoB @item.nombre_ContactoB </option>
+
+
+
+            }
+
+
+
+        </select>
+    </div>
+ 
+
+    <div class="form-group">
+        <input name="A" type="submit" onclick="myFunction()" value="Delete" class="btn btn-default" />
+    </div>
+
+</form>
+<a asp-action="Index">Back to List</a>
+
+<script>
+    function myFunction() {
+       
+        alert("OK");
+
+    }
+
+</script>
