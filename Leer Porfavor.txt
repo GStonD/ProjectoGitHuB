@@ -1,6 +1,7 @@
 estas 2 carpetas contienen 2 projectos hechos con Asp.net del  año 2018,  el ¨projecto incidencias" consiste un CRUD que permite dar altas de emplaedos,departamentos, equipo etc en una escuela.. , y posteriormente  el usuario crea una incidencia donde puede reportar un equipo y poner los datos como ubicacio, empleado . tiempo de incidencia etc.
-el arvhivo word , vienen mas explicado el projecto de inicidencias... este progeto fue para la materia "Gestion de Proyectos de TI"
+el archivo word , vienen mas explicado el projecto de inicidencias... este progeto fue para la materia "Gestion de Proyectos de TI"
 
 
 la tienda online consiste en una tienda de comics de marvel y dc , donde agregas el comics al carrito y puedes  ver el carrito y su contenido, puedes eliminar elementos del carrito, editar cantidad etc., ...puedes hacer un login de usuario , donde el usuario logeado puede hacer dichas acciones en la tienda,,puedes ver el estado de la compra , si esta en proceso o no, el usuario logeado puede ver sus compras etc.
 Este Proyecto fue para la materia  "Negocios Electronicos 2"
+tambien inclui el documento Projecto Tienda..Pantallas.doc..donde vienen iformacion y pantallazos
